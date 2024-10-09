@@ -1,0 +1,528 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+.main{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow:auto;
+    background-image: url(./imagens/universo.jpg);
+    background-size: cover;
+
+}
+.container {
+    font-size: 6px;
+    width: 50em;
+    height: 50em;
+    position: relative;
+}
+
+img{
+    height: 130%;
+    width: 130%;
+}
+.sol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: 0 0 3em rgb(255, 128, 0);
+    animation: orbit 50s linear infinite;
+}
+.mercurio,
+.venus,
+.terra,
+.lua,
+.marte,
+.jupiter,
+.saturno,
+.urano,
+.netuno,
+.plutao {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.mercurio {
+    top: 12.5em;
+    left: 12.5em;
+    width: 15em;
+    height: 15em;
+    animation: orbit 68.7s linear infinite;
+}
+
+.venus {
+    top: 10em;
+    left: 10em;
+    width: 20em;
+    height: 20em;
+    animation: orbit 48.7s linear infinite;
+}
+
+.terra {
+    top: 6em;
+    left: 6em;
+    width: 28em;
+    height: 28em;
+    animation: orbit 36.5s linear infinite;
+}
+.lua {
+    top: 2em;
+    right: -1em;
+    width: 7em;
+    height: 7em;
+    animation: orbit 2.7s linear infinite;
+}
+.marte {
+    top: 2em;
+    left: 2.5em;
+    width: 36em;
+    height: 36em;
+    animation: orbit 26.5s linear infinite;
+}
+.jupiter {
+    top: -2em;
+    left: -2em;
+    width: 45em;
+    height: 45em;
+    animation: orbit 21s linear infinite;
+}
+.saturno {
+    top: -7em;
+    left: -7em;
+    width: 55em;
+    height: 55em;
+    animation: orbit 17s linear infinite;
+}
+.urano {
+    top: -12em;
+    left: -12em;
+    width: 65em;
+    height: 65em;
+    animation: orbit 19s linear infinite;
+}
+.netuno {
+    top: -17em;
+    left: -17em;
+    width: 75em;
+    height: 75em;
+    animation: orbit 15s linear infinite;
+}
+.plutao {
+    top: -22em;
+    left: -22em;
+    width: 85em;
+    height: 85em;
+    animation: orbit 18s linear infinite;
+}
+
+.mercurio::before,
+.venus::before,
+.terra::before,
+.lua::before,
+.marte::before,
+.jupiter::before,
+.saturno::before,
+.urano::before,
+.netuno::before,
+.plutao::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+
+}
+.mercurio::before {
+    top: 1.5em;
+    right: 0.8em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./imagens/mercurio.png');
+    background-size: cover;
+}
+.venus::before {
+    top: 2em;
+    right: 2em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./imagens/venus.png');
+    background-size: cover;
+}
+.terra::before {
+    top: 3em;
+    right: 0em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./imagens/terra.png');
+    background-size: cover;
+}
+
+.lua::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url('./imagens/moon-6311_256.gif');
+    background-size: cover;
+}
+.marte::before {
+    top: 5em;
+    right: 3em;
+    width: 3em;
+    height: 3em;
+    background-image: url('./imagens/marte.png');
+    background-size: cover;
+}
+.jupiter::before {
+    top: 6em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./imagens/jupiter.png');
+    background-size: cover;
+}
+.saturno::before {
+    top: 7.5em;
+    right: 5em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('./imagens/saturno.png');
+    background-size: cover;
+}
+.urano::before {
+    top: 9em;
+    right: 6.5em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./imagens/urano.png');
+    background-size: cover;
+}
+.netuno::before {
+    top: 10em;
+    right: 8em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./imagens/netuno.png');
+    background-size: cover;
+}
+.plutao::before {
+    top: 11em;
+    right: 10em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./imagens/plutao.png');
+    background-size: cover;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+    /* MENU LADO EQUERDO */
+
+.identificacao-planetas{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    width: 500px;
+    height: 900px;
+
+
+}
+
+.lista{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 3px;
+    width: 150px;
+    height: 60px;
+    border: solid 1px white;
+    border-radius: 10%;
+    color: white;
+
+}
+
+.lista img{
+    width: 30px;
+    height: 30px;
+    animation: orbit 10s linear infinite;
+}
+
+.lista a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+}
+
+/* LIGAÇÃO DO MENU DA ESQUERDA COM O MENU DA ESQUERDA */
+
+.lista:hover{
+    background-color: rgba(255, 255, 255, 0.537);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+.descricao-dos-planetas{
+    display: flex;
+    flex-direction: row;
+    justify-content:right;
+    position: fixed;
+    right: 3em;
+
+
+
+}
+.planetas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 3px;
+    width: 400px;
+    height: 400px;
+    border: solid 1px white;
+    border-radius: 10%;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.438);
+
+}
+
+.descricao{
+    margin: 2em;
+    text-align: justify;
+    font-size: 1.4em;
+}
+
+
+.lista:hover + .info-planetas {
+    display: block;
+}
+
+
+.info-planetas {
+    display: none;
+}
+
+.identificacao-planetas .lista:hover + .info-planetas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 300px;
+    right: 0;
+    width: 0;
+    height: 0;
+    color: white;
+    padding: 20px;
+    z-index: 10;
+}
+
+/* CSS NOMES: */
+
+nav {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 8rem;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.101);
+    color: white;
+    padding-top: 150px;
+  }
+
+    nav ul {
+        list-style-type: none; 
+        padding: 0;
+        position: relative;
+        display: flex;
+        top: -229px;
+    }
+    
+    nav li {
+        margin: 15px 0; 
+    }
+    
+    nav a {
+        text-decoration: none; 
+        color: white; 
+        padding: 10px 20px; 
+        border-radius: 5px;
+        transition: background-color 0.3s; 
+        margin: 5px;
+    }
+    
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.438);
+    }
+
+    /* FOGUETE */
+
+.foguete {
+
+    display: flex;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-name: foguete;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.foguete img {
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+}
+
+.foguete .foguete_texto {
+    display: none;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.438);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.foguete:hover .foguete_texto {
+    display: block;  /* Mostra a mensagem ao passar o mouse */
+}
+
+/* /ANIMAÇÃO DO FOGURTE/ */
+
+@keyframes foguete {
+    from {
+        left: 10%;
+        top: 10%;
+    }
+
+    to {
+        left: 110%;
+        top: 110%;
+    }
+
+    0% {
+        transform: rotateZ(30deg)
+    }
+
+    50% {
+        transform: rotateZ(-30deg);
+    }
+
+    100% {
+        transform: rotateZ(30deg);
+    }
+}
+
+/* PUFF */
+
+.puf {
+    display: flex;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-name: puf;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.puf img {
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 40%;
+    height: 40%;
+}
+
+.puf .puf_texto {
+    display: none;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.438);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.puf:hover .puf_texto{
+    display: block;  /* Mostra a mensagem ao passar o mouse */
+}
+
+/* ANIMAÇÃO DO PUFF */
+
+@keyframes puf {
+    from {
+        left: 0%;
+        top: 40%;
+    }
+
+    to {
+        left: 110%;
+        top: 140%;
+    }
+
+    0% {
+        transform: rotateZ(30deg)
+    }
+
+    50% {
+        transform: rotateZ(20deg);
+    }
+
+    100% {
+        transform: rotateZ(30deg);
+    }
+}
